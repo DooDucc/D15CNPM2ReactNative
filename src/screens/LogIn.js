@@ -6,12 +6,9 @@ import { useNavigation } from '@react-navigation/native';
 
 const LogIn = () => {
     const navigation = useNavigation();
-    const back = () => {
-        navigation.goBack();
-    };
     return (
         <View style={styles.container}>
-            <FontAwesome5 name="arrow-left" size={24} style={styles.backBtn} onPress={back} />
+            <FontAwesome5 name="arrow-left" size={24} style={styles.backBtn} onPress={() => navigation.goBack()} />
             <Text style={styles.text}>Sign In</Text>
             <View style={styles.form}>
                 <Input type="text" placeholder="Email or phone number" />

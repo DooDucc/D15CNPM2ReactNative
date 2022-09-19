@@ -4,32 +4,25 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { Button, Input } from '../components';
 
-const SignUp = () => {
+const FGPassWord = () => {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <FontAwesome5 name="arrow-left" size={24} style={styles.backBtn} onPress={() => navigation.goBack()} />
-            <Text style={styles.text}>Create new account</Text>
+            <Text style={styles.text}>Create new password</Text>
             <View style={styles.form}>
-                <Input type="text" placeholder="Full name" />
-                <Input type="numeric" placeholder="Phone number" />
+                <Input type="password" placeholder="New password" />
+                <Input type="password" placeholder="Confirm password" />
                 <Input type="text" placeholder="Email address" />
-                <Input type="password" placeholder="Pass word" />
                 <View style={styles.btnGroup}>
-                    <Button title="Sign up" color="#3b5998" full />
-                    <Button
-                        title="Forgot Password"
-                        color="#3b5998"
-                        full
-                        onPress={() => navigation.navigate('FGPassWord')}
-                    />
+                    <Button title="Login" color="#3b5998" full />
                 </View>
             </View>
         </View>
     );
 };
 
-export default SignUp;
+export default FGPassWord;
 
 const styles = StyleSheet.create({
     container: {
