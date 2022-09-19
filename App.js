@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { LogIn, SignUp, Main } from './src/screens';
+
+const Stack = createStackNavigator();
 
 export default function App() {
     return (
-        <View style={styles.container}>
-            <View style={styles.box} backgroundColor="#7ce0f9">
-                <Text>Square 1</Text>
-            </View>
-            <View style={styles.box} backgroundColor="#4cc2c2">
-                <Text>Square 2</Text>
-            </View>
-            <View style={styles.box} backgroundColor="#ff637c">
-                <Text>Square 3</Text>
-            </View>
-            <StatusBar style="auto" />
-        </View>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+            <NavigationContainer>
+                <Stack.Navigator
+                    screenOptions={{
+                        headerShown: false,
+                    }}
+                    initialRouteName="Main"
+                >
+                    <Stack.Screen name="Main" component={Main}></Stack.Screen>
+                    <Stack.Screen name="LogIn" component={LogIn}></Stack.Screen>
+                    <Stack.Screen name="SignUp" component={SignUp}></Stack.Screen>
+                </Stack.Navigator>
+            </NavigationContainer>
+        </GestureHandlerRootView>
     );
 }
 
