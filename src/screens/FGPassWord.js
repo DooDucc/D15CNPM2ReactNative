@@ -15,7 +15,7 @@ const FGPassWord = () => {
                 <Input type="password" placeholder="Confirm password" />
                 <Input type="text" placeholder="Email address" />
                 <View style={styles.btnGroup}>
-                    <Button title="Login" color="#3b5998" full />
+                    <Button title="Login" color="#3b5998" full onPress={() => navigation.navigate('LogIn')} />
                 </View>
             </View>
         </View>

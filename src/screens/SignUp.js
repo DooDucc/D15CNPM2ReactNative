@@ -3,20 +3,40 @@ import React from 'react';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { Button, Input } from '../components';
+import { Context } from '../context/AuthContext';
 
 const SignUp = () => {
     const navigation = useNavigation();
+    const context = React.useContext(Context);
+
+    const [name, setName] = React.useState('');
+    const [phone, setPhone] = React.useState('');
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
+
+    const handleLogIn = async () => {
+        await context.login(email, password);
+        if (
+            name !== '' &&
+            phone !== '' &&
+            context?.userInfo.email !== undefined &&
+            context?.userInfo.password !== undefined
+        ) {
+            navigation.navigate('Home');
+        }
+    };
+
     return (
         <View style={styles.container}>
             <FontAwesome5 name="arrow-left" size={24} style={styles.backBtn} onPress={() => navigation.goBack()} />
             <Text style={styles.text}>Create new account</Text>
             <View style={styles.form}>
-                <Input type="text" placeholder="Full name" />
-                <Input type="numeric" placeholder="Phone number" />
-                <Input type="text" placeholder="Email address" />
-                <Input type="password" placeholder="Pass word" />
+                <Input type="text" placeholder="Full name" value={name} onChange={setName} />
+                <Input type="numeric" placeholder="Phone number" value={phone} onChange={setPhone} />
+                <Input type="text" placeholder="Email address" value={email} onChange={setEmail} />
+                <Input type="password" placeholder="Pass word" value={password} onChange={setPassword} />
                 <View style={styles.btnGroup}>
-                    <Button title="Sign up" color="#3b5998" full />
+                    <Button title="Sign up" color="#3b5998" full onPress={handleLogIn} />
                     <Button
                         title="Forgot Password"
                         color="#3b5998"
