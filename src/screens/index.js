@@ -1,5 +1,5 @@
-export { default as Home } from './Home';
-export { default as LogIn } from './LogIn';
-export { default as SignUp } from './SignUp';
-export { default as Main } from './Main';
-export { default as FGPassWord } from './FGPassWord';
+export {default as Home} from './home/Home';
+export {default as Cart} from './cart/Cart';
+export {default as ProInfo} from './info/ProInfo';
+export {default as Login} from './login/Login';
+export {default as Register} from './register/Register';

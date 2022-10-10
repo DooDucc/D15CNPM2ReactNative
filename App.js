@@ -1,52 +1,31 @@
-import { StyleSheet } from 'react-native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import React from 'react';
+import { Provider } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { Home, LogIn, SignUp, Main, FGPassWord } from './src/screens';
-import AuthContext from './src/context/AuthContext';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Home, Cart, ProInfo, Login, Register } from './src/screens';
+import store from './src/redux/store';
 
-const Stack = createStackNavigator();
+const App = () => {
+    const Stack = createNativeStackNavigator();
 
-export default function App() {
     return (
-        <GestureHandlerRootView style={{ flex: 1 }}>
+        <Provider store={store}>
             <NavigationContainer>
-                <AuthContext>
-                    <Stack.Navigator
-                        screenOptions={{
-                            headerShown: false,
-                        }}
-                        initialRouteName="Main"
-                    >
-                        <Stack.Screen name="Home" component={Home}></Stack.Screen>
-                        <Stack.Screen name="Main" component={Main}></Stack.Screen>
-                        <Stack.Screen name="LogIn" component={LogIn}></Stack.Screen>
-                        <Stack.Screen name="SignUp" component={SignUp}></Stack.Screen>
-                        <Stack.Screen name="FGPassWord" component={FGPassWord}></Stack.Screen>
-                    </Stack.Navigator>
-                </AuthContext>
+                <Stack.Navigator
+                    screenOptions={{
+                        headerShown: false,
+                    }}
+                    initialRouteName="Login"
+                >
+                    <Stack.Screen name="ProInfo" component={ProInfo} />
+                    <Stack.Screen name="Login" component={Login} />
+                    <Stack.Screen name="Register" component={Register} />
+                    <Stack.Screen name="Home" component={Home} />
+                    <Stack.Screen name="Cart" component={Cart} />
+                </Stack.Navigator>
             </NavigationContainer>
-        </GestureHandlerRootView>
+        </Provider>
     );
-}
+};
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        display: 'flex',
-        paddingHorizontal: 5,
-        flexDirection: 'row',
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-    },
-    box: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderWidth: 1,
-        borderColor: '#fff',
-        width: '30%',
-        height: 120,
-    },
-});
+export default App;
