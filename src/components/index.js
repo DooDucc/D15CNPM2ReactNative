@@ -1,1 +1,1 @@
-export {default as ProCard} from './proCard/ProCard';
+export { default as ProCard } from './proCard/ProCard';
