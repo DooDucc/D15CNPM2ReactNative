@@ -8,14 +8,6 @@ const CartCss = StyleSheet.create({
         backgroundColor: COLOURS.white,
         position: 'relative',
     },
-    container: {
-        width: '100%',
-        flexDirection: 'row',
-        paddingTop: 16,
-        paddingHorizontal: 16,
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
     backIcon: {
         fontSize: 22,
         color: COLOURS.backgroundDark,
@@ -23,10 +15,18 @@ const CartCss = StyleSheet.create({
         backgroundColor: COLOURS.backgroundLight,
         borderRadius: 12,
     },
+    title: {
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderBottomWidth: 1,
+        borderBottomColor: COLOURS.backgroundLight,
+        marginTop: 10,
+    },
     order: {
         fontSize: 30,
         color: COLOURS.black,
-        fontWeight: 'bold',
+        fontWeight: '600',
     },
     cartTitile: {
         fontSize: 25,
@@ -38,6 +38,7 @@ const CartCss = StyleSheet.create({
         marginBottom: 10,
     },
     delivery: {
+        position: 'relative',
         paddingHorizontal: 16,
         marginVertical: 10,
     },
@@ -81,8 +82,7 @@ const CartCss = StyleSheet.create({
     },
     orderInfo: {
         paddingHorizontal: 16,
-        marginTop: 40,
-        marginBottom: 80,
+        marginVertical: 20,
     },
     orderRow: {
         flexDirection: 'row',
@@ -97,17 +97,15 @@ const CartCss = StyleSheet.create({
         color: COLOURS.black,
     },
     checkout: {
-        position: 'absolute',
-        bottom: 10,
-        height: '8%',
-        width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
+        marginBottom: 20,
     },
     checkoutBtn: {
-        width: '86%',
-        height: '90%',
-        backgroundColor: COLOURS.blue,
+        width: '85%',
+        backgroundColor: COLOURS.black,
+        paddingVertical: 10,
+
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',

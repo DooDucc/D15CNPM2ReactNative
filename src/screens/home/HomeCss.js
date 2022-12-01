@@ -4,42 +4,15 @@ import { COLOURS } from '../../constants';
 
 const HomeCss = StyleSheet.create({
     container: {
-        position: 'relative',
         width: '100%',
         height: '100%',
         backgroundColor: COLOURS.white,
     },
-    settingBtn: {
-        position: 'absolute',
-        alignItems: 'center',
-        justifyContent: 'center',
-        top: 20,
-        right: 80,
-        width: 50,
-        height: 50,
-        padding: 12,
-        borderRadius: 10,
-        borderWidth: 1,
-        borderColor: COLOURS.black,
-        zIndex: 100,
-    },
-    cartBtn: {
-        position: 'absolute',
-        alignItems: 'center',
-        justifyContent: 'center',
-        top: 20,
-        right: 20,
-        width: 50,
-        height: 50,
-        padding: 12,
-        borderRadius: 10,
-        borderWidth: 1,
-        borderColor: COLOURS.black,
-        zIndex: 100,
-    },
-    cartIcon: {
-        fontSize: 22,
-        color: COLOURS.black,
+    banner: {
+        width: '100%',
+        height: 200,
+        borderRadius: 20,
+        marginTop: 20,
     },
     introduction: {
         marginVertical: 10,
@@ -47,10 +20,16 @@ const HomeCss = StyleSheet.create({
     },
     title: {
         fontSize: 26,
-        color: COLOURS.black,
-        fontWeight: '500',
+        color: COLOURS.red,
+        fontWeight: 'bold',
         letterSpacing: 1,
         marginBottom: 10,
+        alignSelf: 'center',
+    },
+    ourPro: {
+        alignSelf: 'center',
+        marginBottom: 10,
+        fontSize: 30,
     },
     desc: {
         fontSize: 16,
@@ -61,6 +40,7 @@ const HomeCss = StyleSheet.create({
     },
     products: {
         padding: 16,
+        marginTop: -10,
     },
     productTitle: {
         fontSize: 25,
@@ -92,7 +72,7 @@ const HomeCss = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: COLOURS.white,
-        paddingVertical: 10,
+        paddingVertical: 5,
         borderRadius: 20,
         borderColor: COLOURS.black,
         borderWidth: 1,
@@ -101,6 +81,36 @@ const HomeCss = StyleSheet.create({
         color: COLOURS.black,
         fontWeight: 'bold',
         fontSize: 16,
+        textTransform: 'capitalize',
+    },
+    loadMoreBtn: {
+        alignSelf: 'center',
+        backgroundColor: COLOURS.black,
+        borderRadius: 10,
+        padding: 5,
+        paddingHorizontal: 20,
+        marginBottom: 20,
+    },
+    loadMoreBtnText: {
+        fontSize: 25,
+        color: COLOURS.white,
+    },
+    filterPrice: {
+        width: '60%',
+        alignSelf: 'center',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginTop: 10,
+    },
+    priceBtn: {
+        backgroundColor: COLOURS.backgroundLight,
+        borderRadius: 20,
+        padding: 5,
+    },
+    priceBtnText: {
+        fontSize: 15,
+        fontWeight: '600',
     },
 });
 

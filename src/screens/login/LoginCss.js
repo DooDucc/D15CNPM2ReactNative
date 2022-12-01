@@ -4,7 +4,7 @@ import { COLOURS } from '../../constants';
 const LoginCss = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: COLOURS.blue,
+        backgroundColor: COLOURS.black,
     },
     top: {
         flex: 1,
@@ -48,7 +48,7 @@ const LoginCss = StyleSheet.create({
     loginTitle: {
         textAlign: 'center',
         fontSize: 36,
-        color: COLOURS.blue,
+        color: COLOURS.black,
         fontWeight: 'bold',
     },
     formBlock: {
@@ -63,6 +63,9 @@ const LoginCss = StyleSheet.create({
         width: '100%',
         borderBottomWidth: 1,
         borderColor: COLOURS.backgroundDark,
+    },
+    formForgotBtn: {
+        marginTop: -20,
     },
     formForgot: {
         color: COLOURS.red,

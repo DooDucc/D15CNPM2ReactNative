@@ -1,1 +1,12 @@
 export { default as ProCard } from './proCard/ProCard';
+export { default as CategoryBtn } from './CategoryBtn';
+export { default as Products } from './Products';
+export { default as Header } from './Header';
+export { default as Loader } from './Loader';
+export { default as LoadMoreBtn } from './LoadMoreBtn';
+export { default as ProductInfo } from './ProductInfo';
+export { default as Slider } from './Slider';
+export { default as BackBtn } from './BackBtn';
+export { default as Payment } from './Payment';
+export { default as Delivery } from './Delivery';
+export { default as Price } from './Price';

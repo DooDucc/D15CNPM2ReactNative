@@ -10,12 +10,9 @@ const SettingCss = StyleSheet.create({
     },
     container: {
         width: '100%',
-        flexDirection: 'row',
-        paddingTop: 16,
-        paddingHorizontal: 16,
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: 20,
+        marginVertical: 20,
     },
     backIcon: {
         fontSize: 22,
@@ -50,6 +47,47 @@ const SettingCss = StyleSheet.create({
         left: 15,
         fontSize: 18,
         color: '#999',
+    },
+    options: {
+        alignSelf: 'center',
+        marginTop: 30,
+        width: '80%',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    option: {
+        width: '100%',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: 10,
+        marginBottom: 10,
+        borderBottomColor: COLOURS.black,
+        borderBottomWidth: 1,
+    },
+    left: {
+        width: '40%',
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    optionIcon: {
+        fontSize: 25,
+    },
+    optionText: {
+        fontSize: 16,
+        marginLeft: 20,
+    },
+    logoutBtn: {
+        alignSelf: 'center',
+        backgroundColor: COLOURS.black,
+        borderRadius: 10,
+        marginTop: 30,
+        padding: 10,
+        paddingHorizontal: 20,
+    },
+    logoutBtnText: {
+        fontSize: 25,
+        color: COLOURS.white,
     },
 });
 
