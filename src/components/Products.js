@@ -7,8 +7,8 @@ const Products = ({ products }) => {
     return (
         <View style={HomeCss.products}>
             <View style={HomeCss.productList}>
-                {products?.map((data) => {
-                    return <ProCard key={data.id} data={data} />;
+                {products?.map((data, index) => {
+                    return <ProCard key={data.id} index={index} data={data} />;
                 })}
             </View>
         </View>

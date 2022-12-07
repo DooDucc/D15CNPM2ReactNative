@@ -29,13 +29,10 @@ const Navigation = () => {
                     return <Ionicons name={iconName} size={size} color={color} />;
                 },
                 headerShown: false,
-            })}
-            tabBarOptions={{
-                activeTintColor: 'black',
-                inactiveTintColor: 'grey',
-                labelStyle: { fontSize: 10 },
+                tabBarInactiveTintColor: 'grey',
+                tabBarActiveTintColor: 'black',
                 style: { padding: 10, height: 70 },
-            }}
+            })}
         >
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Cart" component={Cart} />

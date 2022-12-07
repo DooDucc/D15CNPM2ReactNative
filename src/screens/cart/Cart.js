@@ -30,7 +30,11 @@ const Cart = () => {
                 </View>
                 <Text style={CartCss.cartTitile}>My Products</Text>
                 <View style={{ paddingHorizontal: 16 }}>
-                    {cart ? cart.map((item, i) => <CartItem key={i} data={item} />) : null}
+                    {cart.length > 0 ? (
+                        cart.map((item, i) => <CartItem key={i} data={item} />)
+                    ) : (
+                        <Text style={CartCss.emptyText}>Your cart is empty</Text>
+                    )}
                 </View>
                 <View>
                     <Delivery />

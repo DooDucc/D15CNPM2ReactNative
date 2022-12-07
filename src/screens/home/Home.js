@@ -4,10 +4,20 @@ import { COLOURS } from '../../constants';
 import { Products, Header, Loader, LoadMoreBtn } from '../../components';
 import HomeCss from './HomeCss';
 import axios from 'axios';
+import Animated, {
+    useSharedValue,
+    useAnimatedStyle,
+    withSpring,
+    withDelay,
+    withTiming,
+    Extrapolation,
+    interpolate,
+} from 'react-native-reanimated';
 
 let productsPerLoad = 4;
 
 const Home = () => {
+    const animatedValue = useSharedValue(0);
     const [data, setData] = useState([]);
     const [products, setProducts] = useState([]);
     const [category, setCategory] = useState('all');
@@ -27,6 +37,18 @@ const Home = () => {
         };
         getProducts();
     }, []);
+
+    useEffect(() => {
+        animatedValue.value = withDelay(2000, withSpring(1));
+    }, []);
+
+    const animatedStyle = useAnimatedStyle(() => {
+        const scale = interpolate(animatedValue.value, [0, 1], [0, 1], Extrapolation.CLAMP);
+        return {
+            transform: [{ scale }],
+            opacity: animatedValue.value,
+        };
+    });
 
     const handleCategory = (type) => {
         productsPerLoad = 4;
@@ -92,8 +114,8 @@ const Home = () => {
                 <View style={HomeCss.container}>
                     <ScrollView showsVerticalScrollIndicator={false}>
                         <Header />
-                        <Text style={HomeCss.ourPro}>Our Products</Text>
-                        <View style={HomeCss.categoryBoxes}>
+                        <Animated.Text style={[HomeCss.ourPro, animatedStyle]}>Our Products</Animated.Text>
+                        <Animated.View style={[HomeCss.categoryBoxes, animatedStyle]}>
                             <TouchableOpacity
                                 onPress={() => handleCategory('all')}
                                 style={[
@@ -148,8 +170,8 @@ const Home = () => {
                                     Head Phone
                                 </Text>
                             </TouchableOpacity>
-                        </View>
-                        <View style={HomeCss.filterPrice}>
+                        </Animated.View>
+                        <Animated.View style={[HomeCss.filterPrice, animatedStyle]}>
                             <TouchableOpacity
                                 style={[
                                     HomeCss.priceBtn,
@@ -182,10 +204,8 @@ const Home = () => {
                                     Lowest price
                                 </Text>
                             </TouchableOpacity>
-                        </View>
-
+                        </Animated.View>
                         <Products products={products} />
-
                         {productsPerLoad <= products.length && <LoadMoreBtn onPress={handleLoadMore} />}
                     </ScrollView>
                 </View>

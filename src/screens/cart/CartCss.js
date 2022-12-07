@@ -8,6 +8,10 @@ const CartCss = StyleSheet.create({
         backgroundColor: COLOURS.white,
         position: 'relative',
     },
+    emptyText: {
+        alignSelf: 'center',
+        color: 'red',
+    },
     backIcon: {
         fontSize: 22,
         color: COLOURS.backgroundDark,
